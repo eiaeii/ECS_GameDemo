@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ecs">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{45314aa5-fb1a-4d02-8d3d-8149835118dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\system">
+      <UniqueIdentifier>{18d8fbaf-0328-4839-8866-caa583111bf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\singleton">
+      <UniqueIdentifier>{96cf545b-5cbf-4c86-8376-ce82f4d52e6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\component">
+      <UniqueIdentifier>{a0709ff9-034f-442c-9a1b-fb400ed5f191}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\entity">
+      <UniqueIdentifier>{a3d56722-538c-417c-814b-29bb99a5f969}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common\component.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="common\component_pool.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ecs_fwd.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ecs_type_traits.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity_admin.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="common\system.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="base\core.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\crc_hash.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\frame_timer.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\macro.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\object.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\snowflake.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="game\client.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\game_fwd.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\triangle_game.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\graphics_driver_system.h">
+      <Filter>game\system</Filter>
+    </ClInclude>
+    <ClInclude Include="game\input_system.h">
+      <Filter>game\system</Filter>
+    </ClInclude>
+    <ClInclude Include="game\render_system.h">
+      <Filter>game\system</Filter>
+    </ClInclude>
+    <ClInclude Include="game\window_system.h">
+      <Filter>game\system</Filter>
+    </ClInclude>
+    <ClInclude Include="game\singleton_input.h">
+      <Filter>game\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="game\singleton_render.h">
+      <Filter>game\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="game\game_object.h">
+      <Filter>game\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="game\scene_component.h">
+      <Filter>game\component</Filter>
+    </ClInclude>
+    <ClInclude Include="base\game_math.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="game\sprite_component.h">
+      <Filter>game\component</Filter>
+    </ClInclude>
+    <ClInclude Include="game\texture_system.h">
+      <Filter>game\system</Filter>
+    </ClInclude>
+    <ClInclude Include="game\scene_system.h">
+      <Filter>game\system</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ecs_iterator.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="game\textue.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\character_movement_system.h">
+      <Filter>game\system</Filter>
+    </ClInclude>
+    <ClInclude Include="game\player_command_system.h">
+      <Filter>game\system</Filter>
+    </ClInclude>
+    <ClInclude Include="game\character_movement_component.h">
+      <Filter>game\component</Filter>
+    </ClInclude>
+    <ClInclude Include="game\player_input_component.h">
+      <Filter>game\component</Filter>
+    </ClInclude>
+    <ClInclude Include="game\third_person_character.h">
+      <Filter>game\entity</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="game\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\frame_timer.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\object.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\snowflake.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="common\component.cpp">
+      <Filter>ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="common\component_pool.cpp">
+      <Filter>ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="game\client.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity.cpp">
+      <Filter>ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity_admin.cpp">
+      <Filter>ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="common\system.cpp">
+      <Filter>ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="game\triangle_game.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="game\graphics_driver_system.cpp">
+      <Filter>game\system</Filter>
+    </ClCompile>
+    <ClCompile Include="game\input_system.cpp">
+      <Filter>game\system</Filter>
+    </ClCompile>
+    <ClCompile Include="game\render_system.cpp">
+      <Filter>game\system</Filter>
+    </ClCompile>
+    <ClCompile Include="game\window_system.cpp">
+      <Filter>game\system</Filter>
+    </ClCompile>
+    <ClCompile Include="game\singleton_input.cpp">
+      <Filter>game\singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="base\game_math.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="game\game_object.cpp">
+      <Filter>game\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="game\scene_system.cpp">
+      <Filter>game\system</Filter>
+    </ClCompile>
+    <ClCompile Include="game\texture_system.cpp">
+      <Filter>game\system</Filter>
+    </ClCompile>
+    <ClCompile Include="game\player_command_system.cpp">
+      <Filter>game\system</Filter>
+    </ClCompile>
+    <ClCompile Include="game\character_movement_system.cpp">
+      <Filter>game\system</Filter>
+    </ClCompile>
+    <ClCompile Include="game\third_person_character.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
