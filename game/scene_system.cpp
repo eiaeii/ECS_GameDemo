@@ -2,6 +2,7 @@
 #include "triangle_game.h"
 #include "game_object.h"
 #include "singleton_render.h"
+#include "third_person_character.h"
 
 using namespace terra;
 
@@ -34,6 +35,11 @@ void SceneSystem::SpawnRandomActor(int ActorCount)
 		static const std::array<Vector3, 7> colors{ Colors::White, Colors::Green, Colors::Blue, Colors::LightYellow
 			, Colors::LightBlue, Colors::LightPink, Colors::LightGreen };
 		go->Get<SceneComponent>()->SetColor(colors[i % 7]);
-		go->Get<SpriteComponent>()->SetTexture(admin->GetSingletonTexture()->GetTexture("cat"));
+		go->Get<SpriteComponent>()->SetTexture(admin->GetSingletonTexture()->GetTexture("mouse"));
 	}
+
+	ThirdPersonCharacter* third_person_character = admin_->SpawnEntity<ThirdPersonCharacter>();
+	third_person_character->InitializeComponents();
+	third_person_character->Get<SceneComponent>()->SetColor(Colors::LightGreen);
+	third_person_character->Get<SpriteComponent>()->SetTexture(admin->GetSingletonTexture()->GetTexture("cat"));
 }

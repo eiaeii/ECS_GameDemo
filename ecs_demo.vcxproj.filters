@@ -204,7 +204,7 @@
       <Filter>game\system</Filter>
     </ClCompile>
     <ClCompile Include="game\third_person_character.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>game\entity</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

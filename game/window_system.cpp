@@ -16,7 +16,8 @@ WindowSystem::~WindowSystem()
 
 bool WindowSystem::Init()
 {
-	SDL_Window* main_window = SDL_CreateWindow("ECS-Demo", 100, 100, 1280, 720, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+	//1280,720
+	SDL_Window* main_window = SDL_CreateWindow("ECS-Demo", 100, 100, 800, 600, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 
 	if (main_window == nullptr)
 	{

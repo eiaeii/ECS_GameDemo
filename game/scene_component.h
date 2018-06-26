@@ -32,6 +32,7 @@ namespace terra
 		}
 		float GetScale() const { return scale_; }
 		float GetRotation() const { return rotation_; }
+		void SetRotation(float rotation) { rotation_ = rotation; }
 
 		Vector3 GetForwardVector() const
 		{

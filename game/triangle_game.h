@@ -21,6 +21,8 @@ namespace terra
 		std::unique_ptr<RenderSystem> render_system_;
 		std::unique_ptr<SceneSystem> scene_system_;
 		std::unique_ptr<TextureSystem> texture_system_;
+		std::unique_ptr<CharacterMovementSystem> character_movement_system_;
+		std::unique_ptr<PlayerCommandSystem> player_command_system_;
 	public:
 		TriangleGame();
 		~TriangleGame();

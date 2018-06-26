@@ -21,8 +21,8 @@ namespace terra
 	{
 		static_assert(std::conjunction_v<IsComponent<Args>... > && (sizeof...(Args) > 0), "invalid argument type!");
 	private:
-		class TupleIterator;
-		using Iterator = TupleIterator;
+		class ItemIterator;
+		using Iterator = ItemIterator;
 		using TagDispatchType = std::conditional_t<(sizeof...(Args) == 1), std::true_type, std::false_type>;
 		using Pr = typename std::function<bool(std::add_pointer_t<Args>...)>;
 
@@ -46,7 +46,7 @@ namespace terra
 			return Iterator(admin_, pred_, false);
 		}
 	private:
-		class TupleIterator
+		class ItemIterator
 		{
 		private:
 			ComponentSet& component_set_;
@@ -54,7 +54,7 @@ namespace terra
 			ComponentSet::const_iterator it_;
 			ComponentSet::const_iterator end_;
 		public:
-			TupleIterator(EntityAdmin* admin, Pr& pred, bool is_begin = true) 
+			ItemIterator(EntityAdmin* admin, Pr& pred, bool is_begin = true) 
 				: pred_(pred)
 				, component_set_(GetLeastComponentSet<Args...>(admin))
 			{
@@ -69,7 +69,7 @@ namespace terra
 				find_next(TagDispatchType());
 			}
 
-			bool operator!=(const TupleIterator& rhs) const { return It() != rhs.It(); }
+			bool operator!=(const ItemIterator& rhs) const { return It() != rhs.It(); }
 			ComponentSet::const_iterator It() const
 			{
 				return it_;
@@ -81,7 +81,7 @@ namespace terra
 				assert(ent);
 				return ent->Get<Args...>();
 			}
-			TupleIterator& operator++()
+			ItemIterator& operator++()
 			{
 				++it_;
 				find_next(TagDispatchType());
@@ -102,9 +102,13 @@ namespace terra
 				auto& component_set = admin->GetComponentSet(Type2Index::Index<U>());
 				return GetLeastComponentSet<Us...>(admin, compare_set.size() <= component_set.size() ? compare_set : component_set);
 			}
-
-			template<typename U, typename... Us>
+			template<typename U>
 			ComponentSet& GetLeastComponentSet(EntityAdmin* admin)
+			{
+				return admin->GetComponentSet(Type2Index::Index<U>());
+			}
+			template<typename U, typename... Us>
+			std::enable_if_t<sizeof...(Us) != 0, ComponentSet&> GetLeastComponentSet(EntityAdmin* admin)
 			{
 				auto& component_set = admin->GetComponentSet(Type2Index::Index<U>());
 				return GetLeastComponentSet<Us...>(admin, component_set);
@@ -123,8 +127,7 @@ namespace terra
 			}
 
 			void find_next(std::true_type&& t) {
-				auto& ent = (*it_)->Owner();
-				while (it_ != end_ && pred_ && !pred_(ent->Get<Args...>()))
+				while (it_ != end_ && pred_ && !pred_((*it_)->Owner()->Get<Args...>()))
 				{
 					++it_;
 				}

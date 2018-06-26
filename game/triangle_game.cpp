@@ -7,7 +7,8 @@
 #include "render_system.h"
 #include "scene_system.h"
 #include "texture_system.h"
-#include "texture_system.h"
+#include "character_movement_system.h"
+#include "player_command_system.h"
 using namespace terra;
 
 TriangleGame::TriangleGame()
@@ -23,6 +24,8 @@ TriangleGame::TriangleGame()
 	render_system_ = std::make_unique<RenderSystem>(this);
 	scene_system_ = std::make_unique<SceneSystem>(this);
 	texture_system_ = std::make_unique<TextureSystem>(this);
+	character_movement_system_ = std::make_unique<CharacterMovementSystem>(this);
+	player_command_system_ = std::make_unique<PlayerCommandSystem>(this);
 }
 
 TriangleGame::~TriangleGame()
@@ -57,11 +60,13 @@ bool TriangleGame::Init()
 
 void TriangleGame::Update(float time_step)
 {
-	//inputsystem->sample
-
+	player_command_system_->Update(time_step);
+	character_movement_system_->Update(time_step);
 	//world->update
 
 	render_system_->Render();
+
+	Sleep(1);
 }
 
 void TriangleGame::Exit()

@@ -22,4 +22,6 @@ namespace terra
 	class RenderSystem;
 	class SceneSystem;
 	class TextureSystem;
+	class CharacterMovementSystem;
+	class PlayerCommandSystem;
 }

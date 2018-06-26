@@ -40,7 +40,7 @@ void SingletonInput::HandleInput(EInputAction input_action, int key_code)
 		UpdateDesireFloatFromKey(input_action, current_state.axis_right_value);
 		break;
 	case 'w':
-		UpdateDesireFloatFromKey(input_action, current_state.axis_left_value);
+		UpdateDesireFloatFromKey(input_action, current_state.axis_forward_value);
 		break;
 	case 's':
 		UpdateDesireFloatFromKey(input_action, current_state.axis_back_value);

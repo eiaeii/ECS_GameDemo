@@ -27,6 +27,7 @@ namespace terra
 			velocity_ = velocity;
 		}
 		float GetThrustDir() const { return thrust_dir_; }
+		void SetThrustDir(float thrust_dir) { thrust_dir_ = thrust_dir; }
 		float GetMaxLinearSpeed() const { return max_linear_speed_; }
 		float GetMaxRotationSpeed() const { return max_rotation_speed_; }
 	};
