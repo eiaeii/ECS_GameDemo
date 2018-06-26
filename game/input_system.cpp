@@ -25,3 +25,7 @@ void InputSystem::HandleEvent(SDL_Event* in_event)
 		break;
 	}
 }
+
+void InputSystem::Update(float time_step)
+{
+}

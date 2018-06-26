@@ -65,8 +65,6 @@ void TriangleGame::Update(float time_step)
 	//world->update
 
 	render_system_->Render();
-
-	Sleep(1);
 }
 
 void TriangleGame::Exit()

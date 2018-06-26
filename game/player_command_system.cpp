@@ -42,7 +42,7 @@ bool PlayerCommandSystem::IsTimeToSampleInput()
 {
 	static float mNextTimeToSampleInput = 0.f;
 	static const float kTimeBetweenInputSamples = 0.03f;
-	float time = FrameTimer::GetInstance()->GetFrameTimeS();
+	float time = FrameTimer::GetInstance()->GetFrameTotalS();
 	if (time > mNextTimeToSampleInput)
 	{
 		mNextTimeToSampleInput = mNextTimeToSampleInput + kTimeBetweenInputSamples;

@@ -14,5 +14,6 @@ namespace terra
 
 		void HandleEvent(SDL_Event* in_event);
 
+		virtual void Update(float time_step) override;
 	};
 }

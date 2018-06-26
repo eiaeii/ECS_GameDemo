@@ -29,5 +29,6 @@ void CharacterMovementSystem::AdjustVelocityByThrust(float delta_time, SceneComp
 	Vector3 forward_vector = scene_component->GetForwardVector();
 	float thrust_dir = movement_component->GetThrustDir();
 	float max_linear_speed = movement_component->GetMaxLinearSpeed();
-	movement_component->SetVelocity(forward_vector * (thrust_dir * delta_time * max_linear_speed));
+	//movement_component->SetVelocity(forward_vector * (thrust_dir * delta_time * max_linear_speed));
+	movement_component->SetVelocity(forward_vector * (thrust_dir * 0.03f * max_linear_speed));
 }
