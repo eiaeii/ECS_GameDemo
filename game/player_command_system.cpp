@@ -29,7 +29,7 @@ void PlayerCommandSystem::ProcessInputState(float delta_time)
 		if (movement_component && scene_component)
 		{
 			float newRotation = scene_component->GetRotation() + input_state.GetDesiredHorizontalDelta()
-				* movement_component->GetMaxRotationSpeed() * delta_time;
+				* movement_component->GetMaxRotationSpeed() * 0.03f;
 			scene_component->SetRotation(newRotation);
 			float forward_delta = input_state.GetDesiredVerticalDelta();
 			movement_component->SetThrustDir(forward_delta);
