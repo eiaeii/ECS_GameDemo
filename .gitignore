@@ -1,8 +1,6 @@
 *.suo
 *.sdf
 *.pdb
-*.lib
-*.dll
 *.exp
 *.a
 Debug/*
