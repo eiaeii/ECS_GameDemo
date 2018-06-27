@@ -13,6 +13,7 @@ namespace terra
 		~InputSystem();
 
 		void HandleEvent(SDL_Event* in_event);
+		void ClearInputState();
 
 		virtual void Update(float time_step) override;
 	};

@@ -16,14 +16,19 @@ void InputSystem::HandleEvent(SDL_Event* in_event)
 	switch (in_event->type)
 	{
 	case SDL_KEYDOWN:
-		static_cast<TriangleGame*>(admin_)->GetSingletonInput()->HandleInput(EIA_Pressed, in_event->key.keysym.sym);
+		static_cast<TriangleGame*>(admin_)->GetSingletonInput()->OnKeyDownEvent(in_event->key.keysym.sym);
 		break;
 	case SDL_KEYUP:
-		static_cast<TriangleGame*>(admin_)->GetSingletonInput()->HandleInput(EIA_Released, in_event->key.keysym.sym);
+		static_cast<TriangleGame*>(admin_)->GetSingletonInput()->OnKeyUpEvent(in_event->key.keysym.sym);
 		break;
 	default:
 		break;
 	}
+}
+
+void InputSystem::ClearInputState()
+{
+	static_cast<TriangleGame*>(admin_)->GetSingletonInput()->
 }
 
 void InputSystem::Update(float time_step)

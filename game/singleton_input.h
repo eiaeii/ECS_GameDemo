@@ -1,9 +1,12 @@
 #pragma once
 
+#include "core.h"
+
 namespace terra
 {
-	enum EInputAction
+	enum EInputAction : uint8_t
 	{
+		EIA_NULL,
 		EIA_Pressed,
 		EIA_Repeat,
 		EIA_Released,
@@ -31,9 +34,15 @@ namespace terra
 	};
 	
 
+
 	struct SingletonInput
 	{
-		InputState current_state;
-		void HandleInput(EInputAction input_action, int key_code);
+		SingletonInput()
+		{
+			memset(key_state_, false, sizeof(key_state_));
+		}
+		bool key_state_[0xFF];
+		void OnKeyDownEvent(int key_code);
+		void OnKeyUpEvent(int key_code);
 	};
 }

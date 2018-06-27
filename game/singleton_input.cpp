@@ -1,5 +1,5 @@
 #include "singleton_input.h"
-
+#include <cassert>
 using namespace terra;
 
 namespace
@@ -51,4 +51,16 @@ void SingletonInput::HandleInput(EInputAction input_action, int key_code)
 	default:
 		break;
 	}
+}
+
+void SingletonInput::OnKeyDownEvent(int key_code)
+{
+	assert(key_code >= 0 && key_code < 0xFF);
+	key_state_[key_code] = true;
+}
+
+void SingletonInput::OnKeyUpEvent(int key_code)
+{
+	assert(key_code >= 0 && key_code < 0xFF);
+	key_state_[key_code] = false;
 }
