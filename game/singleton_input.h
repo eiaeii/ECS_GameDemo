@@ -37,12 +37,15 @@ namespace terra
 
 	struct SingletonInput
 	{
+	private:
+		bool key_state_[0xFF];
+	public:
 		SingletonInput()
 		{
 			memset(key_state_, false, sizeof(key_state_));
 		}
-		bool key_state_[0xFF];
 		void OnKeyDownEvent(int key_code);
 		void OnKeyUpEvent(int key_code);
+		bool IsKeyDown(int key_code);
 	};
 }

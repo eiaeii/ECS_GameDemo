@@ -16,6 +16,7 @@ namespace terra
 
 	private:
 		void SimulateMovement(float delta_time);
-		void AdjustVelocityByThrust(float delta_time, SceneComponent* scene_component, CharacterMovementComponent* movement_component);
+		void AdjustRotationBySteer(SceneComponent* scene_component, CharacterMovementComponent* movement_component);
+		void AdjustVelocityByThrust(SceneComponent* scene_component, CharacterMovementComponent* movement_component);
 	};
 }

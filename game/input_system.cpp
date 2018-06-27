@@ -26,11 +26,6 @@ void InputSystem::HandleEvent(SDL_Event* in_event)
 	}
 }
 
-void InputSystem::ClearInputState()
-{
-	static_cast<TriangleGame*>(admin_)->GetSingletonInput()->
-}
-
 void InputSystem::Update(float time_step)
 {
 }

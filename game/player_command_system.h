@@ -15,6 +15,5 @@ namespace terra
 
 	private:
 		void ProcessInputState(float delta_time);
-		bool IsTimeToSampleInput();
 	};
 }

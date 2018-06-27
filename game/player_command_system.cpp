@@ -15,39 +15,54 @@ void PlayerCommandSystem::Update(float time_step)
 
 void PlayerCommandSystem::ProcessInputState(float delta_time)
 {
-	if (!IsTimeToSampleInput())
-	{
-		return;
-	}
 	TriangleGame* admin = static_cast<TriangleGame*>(admin_);
 	SingletonInput* singleton_input = admin->GetSingletonInput();
-	const InputState& input_state = singleton_input->current_state;
 	for (PlayerInputComponent* player_input_component  : ComponentItr<PlayerInputComponent>(admin_))
 	{
 		CharacterMovementComponent* movement_component = player_input_component->Sibling<CharacterMovementComponent>();
 		SceneComponent* scene_component = player_input_component->Sibling<SceneComponent>();
 		if (movement_component && scene_component)
 		{
-			float newRotation = scene_component->GetRotation() + input_state.GetDesiredHorizontalDelta()
-				* movement_component->GetMaxRotationSpeed() * 0.03f;
-			scene_component->SetRotation(newRotation);
-			float forward_delta = input_state.GetDesiredVerticalDelta();
-			movement_component->SetThrustDir(forward_delta);
+			float forward_delta , back_delta, left_delta, right_delta;
+			if (singleton_input->IsKeyDown('w'))
+			{
+				forward_delta = 1.f;
+			}
+			else
+			{
+				forward_delta = 0;
+			}
+			if (singleton_input->IsKeyDown('s'))
+			{
+				back_delta = 1.f;
+			}
+			else
+			{
+				back_delta = 0.f;
+			}
+			if (singleton_input->IsKeyDown('a'))
+			{
+				left_delta = 1.f;
+			}
+			else
+			{
+				left_delta = 0;
+			}
+			if (singleton_input->IsKeyDown('d'))
+			{
+				right_delta = 1.f;
+			}
+			else
+			{
+				right_delta = 0.f;
+			}
+			//float newRotation = scene_component->GetRotation() + input_state.GetDesiredHorizontalDelta()
+			//	* movement_component->GetMaxRotationSpeed() * 0.03f;
+			//scene_component->SetRotation(newRotation);
+			//float forward_delta = input_state.GetDesiredVerticalDelta();
+			movement_component->SetThrustDir(forward_delta - back_delta);
+			movement_component->SetSteerDir(right_delta - left_delta);
 		}
 	
 	}
-}
-
-bool PlayerCommandSystem::IsTimeToSampleInput()
-{
-	static float mNextTimeToSampleInput = 0.f;
-	static const float kTimeBetweenInputSamples = 0.03f;
-	float time = FrameTimer::GetInstance()->GetFrameTotalS();
-	if (time > mNextTimeToSampleInput)
-	{
-		mNextTimeToSampleInput = mNextTimeToSampleInput + kTimeBetweenInputSamples;
-		return true;
-	}
-
-	return false;
 }
