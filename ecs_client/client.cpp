@@ -5,11 +5,11 @@
 
 using namespace terra;
 
-std::unique_ptr<Client> Client::sInstance;
+std::unique_ptr<Client> Client::client_instance_;
 
 bool Client::StaticInit()
 {
-	sInstance = std::make_unique<Client>();
+	client_instance_ = std::make_unique<Client>();
 	return true;
 }
 

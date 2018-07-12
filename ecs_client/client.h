@@ -14,7 +14,7 @@ namespace terra
 		bool should_keep_running_{ true };
 	public:
 		static bool StaticInit();
-		static std::unique_ptr<Client> sInstance;
+		static std::unique_ptr<Client> client_instance_;
 		Client();
 		~Client();
 

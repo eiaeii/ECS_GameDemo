@@ -8,7 +8,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 	if (Client::StaticInit())
 	{
-		return Client::sInstance->Run();
+		return Client::client_instance_->Run();
 	}
 	else
 	{

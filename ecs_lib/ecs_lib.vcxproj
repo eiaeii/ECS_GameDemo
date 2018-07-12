@@ -79,7 +79,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>.\;..\sdl\include;.\base;.\common;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;..\sdl\include;.\base;.\common;.\utility;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -131,6 +131,10 @@
     <ClInclude Include="common\entity.h" />
     <ClInclude Include="common\entity_admin.h" />
     <ClInclude Include="common\system.h" />
+    <ClInclude Include="utility\socket_address.h" />
+    <ClInclude Include="utility\socket_util.h" />
+    <ClInclude Include="utility\string_utils.h" />
+    <ClInclude Include="utility\tcp_socket.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base\frame_timer.cpp" />
@@ -142,6 +146,9 @@
     <ClCompile Include="common\entity.cpp" />
     <ClCompile Include="common\entity_admin.cpp" />
     <ClCompile Include="common\system.cpp" />
+    <ClCompile Include="utility\socket_util.cpp" />
+    <ClCompile Include="utility\string_utils.cpp" />
+    <ClCompile Include="utility\tcp_socket.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

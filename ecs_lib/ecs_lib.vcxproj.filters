@@ -9,6 +9,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{12e7f246-a1f8-435e-bbc6-fe224c88e9d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base\core.h">
@@ -56,6 +59,18 @@
     <ClInclude Include="common\system.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="utility\tcp_socket.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\socket_address.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\socket_util.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\string_utils.h">
+      <Filter>utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base\frame_timer.cpp">
@@ -84,6 +99,15 @@
     </ClCompile>
     <ClCompile Include="common\system.cpp">
       <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\tcp_socket.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\socket_util.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\string_utils.cpp">
+      <Filter>utility</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
