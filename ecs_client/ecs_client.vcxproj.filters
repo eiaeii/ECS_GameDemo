@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="character_movement_component.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="character_movement_system.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="client.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="game_fwd.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="game_object.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics_driver_system.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="input_system.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="player_command_system.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="player_input_component.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="render_system.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_component.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_system.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton_input.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton_render.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="sprite_component.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="textue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_system.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="third_person_character.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="triangle_game.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="window_system.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="character_movement_system.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="client.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics_driver_system.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="input_system.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="player_command_system.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="render_system.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="scene_system.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="singleton_input.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_system.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="third_person_character.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="triangle_game.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="window_system.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
