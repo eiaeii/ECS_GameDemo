@@ -13,6 +13,8 @@ namespace terra
 		BaseComponent();
         virtual ~BaseComponent();
 
+		virtual void Reset() {}
+
 		void SetOwner(EntityPtr ent) { ent_ = ent; }
 		EntityPtr Owner() { return ent_; }
 

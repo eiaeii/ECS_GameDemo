@@ -2,7 +2,7 @@
 #include <chrono>
 #include <thread>
 #include "frame_timer.h"
-
+#include "socket_util.h"
 #include "connection_system.h"
 using namespace terra;
 
@@ -12,19 +12,27 @@ std::unique_ptr<Server> Server::server_instance_;
 bool Server::StaticInit()
 {
 	server_instance_ = std::make_unique<Server>();
-
-
 	return true;
 }
 
 Server::Server()
 {
+	SocketUtil::StaticInit();
+
 	connection_system_ = std::make_unique<ConnectionSystem>(this);
+}
+
+terra::Server::~Server()
+{
+	SocketUtil::CleanUp();
 }
 
 bool Server::Init()
 {
-	connection_system_->Init();
+	if (!connection_system_->Init())
+	{
+		return false;
+	}
 
 	return true;
 }
@@ -33,6 +41,11 @@ int Server::Run()
 {
 	using namespace std::chrono;
 	using namespace std::literals;
+
+	if (!server_instance_->Init())
+	{
+		return -1;
+	}
 
 	while (should_keep_running_)
 	{
@@ -51,4 +64,8 @@ int Server::Run()
 void Server::Update(float time_step)
 {
 	connection_system_->Update(time_step);
+}
+
+void Server::Exit()
+{
 }

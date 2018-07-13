@@ -39,7 +39,7 @@ namespace terra
 		std::vector<ActionBinding> action_bindings_;
 	public:
 		using BaseComponent::BaseComponent;
-		void Reset()
+		void Reset() override
 		{
 			ClearActionBindings();
 		}

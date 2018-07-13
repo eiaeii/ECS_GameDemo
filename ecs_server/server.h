@@ -18,9 +18,10 @@ namespace terra
 		static std::unique_ptr<Server> server_instance_;
 		static bool StaticInit();
 		Server();
+		~Server();
 		bool Init() override;
-		int Run(); 
-
+		void Update(float time_step) override;
+		void Exit() override;
 		//void HandleNewClient(ClientProxyPtr inClientProxy);
 		//void HandleLostClient(ClientProxyPtr inClientProxy);
 
@@ -28,8 +29,8 @@ namespace terra
 		//void	SpawnCatForPlayer(int inPlayerId);
 
 
+		int Run();
 	private:
-		void	Update(float time_step);
 		//bool	InitNetworkManager();
 		//void	SetupWorld();
 

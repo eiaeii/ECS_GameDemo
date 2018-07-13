@@ -119,14 +119,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="client_proxy.cpp" />
     <ClCompile Include="connection_system.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="server.cpp" />
+    <ClCompile Include="tcp_listener.cpp" />
+    <ClCompile Include="tcp_listener_component.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="client_proxy.h" />
     <ClInclude Include="connection_system.h" />
+    <ClInclude Include="network_component.h" />
+    <ClInclude Include="tcp_listener_component.h" />
     <ClInclude Include="server.h" />
     <ClInclude Include="server_fwd.h" />
+    <ClInclude Include="tcp_listener.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

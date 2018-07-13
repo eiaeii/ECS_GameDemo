@@ -11,9 +11,6 @@ namespace terra
 		Vector3 origin_;
 		TexturePtr texture_;
 	public:
-		void Reset()
-		{
-		}
 		Vector3 GetOrigin() const { return origin_; }
 		void SetOrigin(const Vector3& origin)
 		{

@@ -128,7 +128,8 @@ int SocketUtil::Select(const std::vector<TCPSocketPtr>* inReadSet,
 	const std::vector<TCPSocketPtr>* inWriteSet,
 	std::vector<TCPSocketPtr>* outWriteSet,
 	const std::vector<TCPSocketPtr>* inExceptSet,
-	std::vector<TCPSocketPtr>* outExceptSet)
+	std::vector<TCPSocketPtr>* outExceptSet,
+	timeval* tv)
 {
 	//build up some sets from our vectors
 	fd_set read, write, except;
@@ -139,7 +140,7 @@ int SocketUtil::Select(const std::vector<TCPSocketPtr>* inReadSet,
 	fd_set *writePtr = FillSetFromVector(read, inWriteSet, nfds);
 	fd_set *exceptPtr = FillSetFromVector(read, inExceptSet, nfds);
 
-	int toRet = select(nfds + 1, readPtr, writePtr, exceptPtr, nullptr);
+	int toRet = select(nfds + 1, readPtr, writePtr, exceptPtr, tv);
 
 	if (toRet > 0)
 	{

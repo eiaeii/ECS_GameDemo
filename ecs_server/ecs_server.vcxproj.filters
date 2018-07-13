@@ -27,6 +27,15 @@
     <ClCompile Include="connection_system.cpp">
       <Filter>system</Filter>
     </ClCompile>
+    <ClCompile Include="tcp_listener.cpp">
+      <Filter>entity</Filter>
+    </ClCompile>
+    <ClCompile Include="client_proxy.cpp">
+      <Filter>entity</Filter>
+    </ClCompile>
+    <ClCompile Include="tcp_listener_component.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="server.h">
@@ -37,6 +46,18 @@
     </ClInclude>
     <ClInclude Include="server_fwd.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="tcp_listener.h">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="tcp_listener_component.h">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="client_proxy.h">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="network_component.h">
+      <Filter>component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

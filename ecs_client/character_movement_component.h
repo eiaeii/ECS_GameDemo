@@ -17,7 +17,7 @@ namespace terra
 	public:
 		using BaseComponent::BaseComponent;
 
-		void Reset()
+		void Reset() override
 		{
 			max_linear_speed_ = 3.f;
 			max_rotation_speed_ = 3.f;

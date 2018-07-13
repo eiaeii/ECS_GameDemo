@@ -16,10 +16,6 @@ namespace terra
 	public:
 		using BaseComponent::BaseComponent;
 
-		void Reset()
-		{
-
-		}
 		Vector3 GetLocation() const { return location_; }
 		void SetLocation(const Vector3& location)
 		{

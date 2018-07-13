@@ -14,7 +14,7 @@ namespace terra
 	public:
 		using Entity::Entity;
 
-		virtual void InitializeComponents();
+		virtual void InitializeComponents() override;
 
 		SceneComponent* GetSceneComponent() { return Get<SceneComponent>(); }
 	};

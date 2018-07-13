@@ -12,5 +12,9 @@ namespace terra
 
 		virtual bool Init() override;
 		virtual void Update(float time_step) override;
+	private:
+		void HandleNewConnection();
+		void HandleDisconnection();
+		void ProcessIncomingPackets();
 	};
 }

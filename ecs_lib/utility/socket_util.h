@@ -25,7 +25,8 @@ namespace terra
 			const std::vector<TCPSocketPtr>* inWriteSet,
 			std::vector<TCPSocketPtr>* outWriteSet,
 			const std::vector<TCPSocketPtr>* inExceptSet,
-			std::vector<TCPSocketPtr>* outExceptSet);
+			std::vector<TCPSocketPtr>* outExceptSet,
+			struct timeval* tv);
 
 		//static UDPSocketPtr	CreateUDPSocket(SocketAddressFamily inFamily);
 		static TCPSocketPtr	CreateTCPSocket(SocketAddressFamily inFamily);
